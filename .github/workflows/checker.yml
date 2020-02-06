@@ -1,4 +1,4 @@
-name: Send Weather Mail
+name: Check if zhihu is ok
 
 on:
   schedule:
