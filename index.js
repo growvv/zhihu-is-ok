@@ -1,6 +1,10 @@
+require('dotenv').config()
+
 const axios = require('axios')
 const moment = require('moment')
 const {GistBox} = require('gist-box')
+
+const { GIST_ID, token } = process.env
 
 async function tools(){
   let closed = true
