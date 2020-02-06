@@ -4,7 +4,7 @@ const axios = require('axios')
 const moment = require('moment')
 const {GistBox} = require('gist-box')
 
-const { GIST_ID, token } = process.env
+const { GIST_ID, TOKEN } = process.env
 
 async function tools(){
   let closed = true
@@ -33,8 +33,6 @@ async function tools(){
       ${time}`
   }
 
-  const GIST_ID = '6445484d9c0dd5eca236b37413d022cc'
-  const TOKEN = '9476dda426b1c268b1ff567514eb30aa39950bb2'
   const box = new GistBox({ id: GIST_ID, token: TOKEN })
   console.log(box)
   await box.update({
