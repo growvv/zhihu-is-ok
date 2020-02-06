@@ -1,10 +1,12 @@
 # zhihu-is-ok
 利用Github Action每隔30检查zhihu的状态并发布到Gist上。
 
+[查看效果](https://gist.github.com/growvv/ebe0a05e695c05b4dad1a907cd51f4f5)
+
 ## 一、检查网站状态
 使用axios发送get请求，检查返回的状态码。
 
-为确保误报，请求3次。
+为确保不会误报，每次请求3次。
 
 ```js
   let closed = true
@@ -62,13 +64,24 @@ jobs:
         
     - name: 'Install NPM dependencies'
       run: 
-        npm install axios moment gist-box
+        npm install axios moment gist-box dotenv dotenv-extended
         
     - name: Run
       run: node index.js
 ```
 ## 四、有待改进
 1. 使用Action的环境变量将token藏起来
+
+已解决：
+```yml
+    - name: Run
+      run: node index.js
+      env:
+        GIST_ID: 'ebe0a05e695c05b4dad1a907cd51f4f5'
+        TOKEN: ${{ secrets.token }}
+```
+将token存到项目的secrets里，在index.js引入环境变量。
+
 2. box.update()貌似有频率限制，除了再生成一个token，不知道还有什么其他办法
 
 ## 参考链接
