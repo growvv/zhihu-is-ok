@@ -22,7 +22,7 @@ jobs:
         
     - name: 'Install NPM dependencies'
       run: 
-        npm install axios moment gist-box
+        npm install axios moment gist-box dotenv dotenv-extended
         
     - name: Run
       run: node index.js
