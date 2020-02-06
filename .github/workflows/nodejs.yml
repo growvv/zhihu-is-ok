@@ -3,9 +3,7 @@ name: Send Weather Mail
 on:
   schedule:
     - cron: "*/30 * * * *"
-  push:
-    branches:
-      - master
+
 
 jobs:
   build:
@@ -27,5 +25,5 @@ jobs:
     - name: Run
       run: node index.js
       env:
-        GIST_ID: '6445484d9c0dd5eca236b37413d022cc'
+        GIST_ID: 'ebe0a05e695c05b4dad1a907cd51f4f5'
         TOKEN: ${{ secrets.token }}
