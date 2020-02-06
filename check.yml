@@ -3,7 +3,7 @@ name: Send Weather Mail
 on:
   schedule:
     - cron: "*/30 * * * *"
-
+  push:
 
 jobs:
   build:
